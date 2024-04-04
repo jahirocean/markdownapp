@@ -1,15 +1,101 @@
-@tailwind base;
+:root {
+  /* Colour Palette */
+  --pink: #c53bbe;
+  --orange: #fe5f3d;
+  --blue: #0662f4;
+  --purple: #480198;
+  --black: #222222;
+  --grey: #dfdfdf;
+  --lightgrey: #fafafa;
+  --white: #ffffff;
 
-/* Write your own custom base styles here */
+  /* Usage */
 
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
+  --background: var(--lightgrey);
+  --docBackground: var(--black);
+  --lineColor: var(--grey);
+  --textColor: var(--white);
+  --hColor: var(--white);
+  --linkColor: var(--purple);
 
-/* Write you own custom component styles here */
+  /* Typography */
+  --headingFont: "Montserrat", sans-serif;
+  --bodyFont: "Open Sans", sans-serif;
+  --headingWeight: 400;
+  --bodyWeight: 400;
+  --baseFontSize: 112.5%;
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
+  --p: 1.25rem;
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --h4: 1.563rem;
+  --h5: var(--baseFontSize);
+  --smallText: 0.8em;
 
-/* Your own custom utilities */
+  /* Borders */
+  --borderRadius: 6px;
+  --borderLine: 1px solid var(--lineColor);
+
+  /* Shadows */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /*  Containers */
+  --containerMaxWidth: 100%;
+  --containerHorizontalPadding: 1.2rem;
+  --contentMaxWidth: 1580px;
+
+  /* Waves */
+  --wave: var(--lightgrey);
+}
+
+/* Breakpoints */
+@media screen and (min-width: 640px) {
+  :root {
+    --containerMaxWidth: 640px;
+    --containerHorizontalPadding: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    /*  I thing this is wrong */
+    --containerMaxWidth: 1280px;
+  }
+}
+
+html {
+  font-size: var(--baseFontSize);
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--bodyFont);
+  font-weight: var(--bodyWeight);
+  line-height: 1.65;
+  background: var(--docBackground);
+  color: var(--textColor);
+}
+
+*:focus {
+  outline-color: var(--pink);
+}
+
+*::selection {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+p {
+  font-size: var(--p);
+  color: var(--textColor);
+  margin-bottom: 1.15rem;
+  max-width: 40em;
+}
